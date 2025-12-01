@@ -1,0 +1,18 @@
+package gr.aueb.cf.cf9.ch8;
+
+import java.sql.SQLOutput;
+
+public class NpeApp {
+
+    public static void main(String[] args) {
+        String s;
+
+        s = getOneOrNull();
+
+        System.out.println(s.length());
+    }
+
+    public static String getOneOrNull() {
+        return null;
+    }
+}
