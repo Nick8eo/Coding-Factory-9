@@ -1,5 +1,8 @@
 package gr.aueb.cf.cf9.ch6;
 
+/**
+ * Υλοποιεί μία λογική Last-In-First-Out (LIFO).
+ */
 public class StackApp {
     static int[] stack = new int[10];
     static int top = -1;
@@ -7,12 +10,12 @@ public class StackApp {
     public static void main(String[] args) {
         int num = 0;
 
-        push(1);
+        push(1);        // top -> 0
         push(2);
         push(3);
         push(4);
         push(5);
-        push(6);
+        push(6);        // top -> 5
 
         printStack();
         num = pop();
@@ -28,7 +31,7 @@ public class StackApp {
         }
         top++;
         stack[top] = num;
-        // stack[++top] = num (πρώτα αλλάζω τον top και μετά εκχωρώ)
+        //stack[++top] = num;
     }
 
     public static int pop() {
@@ -38,8 +41,7 @@ public class StackApp {
         int num = stack[top];
         top--;
         return num;
-        // return stack[top--];
-
+        //return stack[top--];
     }
 
     public static boolean isEmpty() {
@@ -47,16 +49,16 @@ public class StackApp {
     }
 
     public static boolean isFull() {
-        return top == stack.length-1;
+        return top == stack.length - 1;
     }
 
     public static void printStack() {
         if (isEmpty()) {
-            throw new RuntimeException("Stack is empty");
+            throw new RuntimeException("Stack is empty!");
         }
 
         for (int i = top; i >= 0; i--) {
-            System.out.print(stack[i] + " ");
+            System.out.println(stack[i]);
         }
     }
 }

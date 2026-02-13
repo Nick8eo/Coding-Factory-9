@@ -16,11 +16,12 @@ public class ArrayMin {
         int minValue = arr[minPosition];
 
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < minValue) {
+            if (arr[i] < minValue) {            // σύγκριση
                 minPosition = i;
                 minValue = arr[i];
             }
         }
+
         return minPosition;
     }
 
@@ -39,8 +40,24 @@ public class ArrayMin {
         return minPosition;
     }
 
-    public static int getMaxPosition(int[] arr){
-        if (arr == null || arr.length <1) return -1;
+    public static int getMaxPosition(int[] arr) {
+        if (arr == null || arr.length == 0) return -1;
+
+        int maxPosition = 0;
+        int maxValue = arr[maxPosition];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxValue) {            // σύγκριση
+                maxPosition = i;
+                maxValue = arr[i];
+            }
+        }
+
+        return maxPosition;
+    }
+
+    public static int getMaxPosition2(int[] arr) {
+        if (arr == null || arr.length < 1) return -1;
 
         int maxPosition = 0;
         int maxValue = Integer.MIN_VALUE;

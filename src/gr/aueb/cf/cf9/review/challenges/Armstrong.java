@@ -3,41 +3,35 @@ package gr.aueb.cf.cf9.review.challenges;
 import java.util.Scanner;
 
 /**
- * Ένας αριθμός Armstrong είναι αριθμός
+ * Ένας αριθμός Armstrong είναι ένας αριθμός
  * που είναι ίσος με το άθροισμα των ψηφίων του
  * όπου το κάθε ψηφίο έχει υψωθεί στη δύναμη του
  * αριθμού των ψηφίων.
+ *
+ * Για παράδειγμα, 153 = 1^3 + 5^3 + 3^3
  */
 public class Armstrong {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int num = 0;
-        int count = 0;
+        int initialNum   = 0;
+        int numberOfDigits = 0;
+        int digit = 0;
         int sum = 0;
 
         System.out.println("Please enter a number: ");
         num = scanner.nextInt();
-        int num2 = num;
-        int num3 = num;
-        while (num2 > 0) {
-            num2 /= 10;
-            count++;
-        }
-        while (num3 > 0) {
-            int digit = num3 % 10;
-            int result = 1;
-            for (int i = 0; i < count; i++) {
-                result *= digit;
-            }
-            num3 /= 10;
-            sum += result;
+
+        numberOfDigits = String.valueOf(num).length();
+
+        initialNum = num;
+        while (num != 0) {
+            digit = num % 10;
+            sum += (int) Math.pow(digit, numberOfDigits);
+            num /= 10;
         }
 
-        System.out.printf("%d%s Armstrong \n", num, (sum == num) ? " is" : "is not");
-
-
-        }
-
+        System.out.printf("%d%s Armstrong\n", initialNum, (sum == initialNum) ? " is" : " is not");
     }
-
+}

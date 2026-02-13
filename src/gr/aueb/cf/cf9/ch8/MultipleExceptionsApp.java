@@ -13,14 +13,13 @@ public class MultipleExceptionsApp {
 
         try (Scanner scanner = new Scanner(file)) {
             ch = (char) System.in.read();
-
         } catch (FileNotFoundException e) {
-            System.out.println("File Not Found");
+            System.out.println("File not found");
             e.printStackTrace();
         } catch (IOException e) {
             System.out.println("char read error");
             e.printStackTrace();
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Something went wrong");
             e.printStackTrace();
         }

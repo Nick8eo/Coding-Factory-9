@@ -11,19 +11,11 @@ public class AddApp {
         int sum = 0;
 
         sum = add(num1, num2);
-        System.out.println(sum);
 
+        System.out.println( "Sum = " + sum);
     }
 
     public static int add(int a, int b) {
-
-        // Δήλωση και αρχικοποίηση
-        //int sum = 0;
-
-        // Επεξεργασία δεδομένων εισόδου
-        // sum = a+b;
-
-        // Επιστροφή αποτελέσματος
         return a + b;
     }
 }

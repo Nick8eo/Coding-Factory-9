@@ -1,35 +1,38 @@
 package gr.aueb.cf.cf9.ch8;
 
+import java.io.File;
+
+import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FinallyApp {
 
     public static void main(String[] args) {
-//        Scanner in = new Scanner(System.in);
+//        Scanner scanner = new Scanner(System.in);       // Resource
         int num = 0;
 
 //        try {
-//            num = in.nextInt();
-//            System.out.println("num: " + num);
+//            num = scanner.nextInt();
+//            System.out.println("num = " + num);
 //        } catch (InputMismatchException e) {
 //            System.err.println("Error: " + e.getMessage());
 //            e.printStackTrace();
-//        }finally {
+//        } finally {
 //            try {
-//                if (in != null) {
-//                    in.close();
+//                if (scanner != null) {
+//                    scanner.close();
 //                }
-//
 //            } catch (Exception e) {
 //                System.err.println("Error: " + e.getMessage());
 //                e.printStackTrace();
 //            }
 //        }
-        try (Scanner in = new Scanner(System.in)) { //try with resources. κλείνει ό,τι έχουμε στην παρένθεση αυτόματα
-            num = in.nextInt();
-            System.out.println("num = " + num );
-        } catch (InputMismatchException e) {
+
+        try (Scanner scanner = new Scanner(new File("C:/users/a8ana/data.txt"))) {        // try with resources
+            num = scanner.nextInt();
+            System.out.println("num = " + num);
+        } catch (InputMismatchException | FileNotFoundException e) {
             System.err.println("Error: " + e.getMessage());
             e.printStackTrace();
         }

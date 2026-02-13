@@ -3,24 +3,31 @@ package gr.aueb.cf.cf9.ch3;
 import java.util.Scanner;
 
 /**
- * Count the numbers of iterations.
- * when the user inserts -1,
+ * Count the number of iterations.
+ * When the user inserts -1,
  * the while-do loop will stop.
  */
 public class IterationsCountApp {
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+
+        // Δήλωση και Αρχικοποίηση Μεταβλητών
+        Scanner scanner = new Scanner(System.in);
         int num = 0;
         int iterations = 0;
 
-        System.out.println("Please enter a number:");
-        num = in.nextInt();
+        // Είσοδος Δεδομένων
+        System.out.println("Please enter a number: ");
+        num = scanner.nextInt();
 
-        while (num != -1) {
+        // Επεξεργασία - while-do
+        while ((num = scanner.nextInt()) != -1) {
             iterations++;
             System.out.println("Please enter a number:");
-            num = in.nextInt();
+            // num = scanner.nextInt();
         }
-        System.out.printf("The count of iterations is %d", iterations);
+
+        // Εκτύπωση Αποτελεσμάτων
+        System.out.println("The count of iterations is: " + iterations);
     }
 }

@@ -1,23 +1,33 @@
 package gr.aueb.cf.cf9.ch6;
 
 public class BubbleSort {
+
     public static void main(String[] args) {
-        int[] arr = {5, 12, 21,4 ,6 ,8,9 ,62};
+        int[] arr = { 12, 11, 13, 5, 6, 8, 23, 45, 55 };
+        int[] sorted;
 
+        System.out.println("Before sorting: ");
+        printArray(arr);
 
+        System.out.println();
+
+        System.out.println("After sorting: ");
+        sorted = bubbleSort(arr);
+        printArray(sorted);
     }
 
     public static int[] bubbleSort(int[] arr) {
 
         for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                if (arr[j] > arr[j+1]) {
+                if (arr[j] > arr[j + 1]) {
                     swap(arr, j, j + 1);
                 }
             }
         }
         return arr;
     }
+
     public static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];

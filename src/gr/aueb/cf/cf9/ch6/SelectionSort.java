@@ -1,22 +1,23 @@
 package gr.aueb.cf.cf9.ch6;
 
 public class SelectionSort {
-    public static void main(String[] args) {
-        int[] arr = {12, 11, 13, 5, 6};
-        int [] sorted = new int[5];
 
-        System.out.println("Before Sorting: ");
+    public static void main(String[] args) {
+        int[] arr = { 12, 11, 13, 5, 6, 8, 23, 45, 55 };
+        int[] sorted;
+
+        System.out.println("Before sorting: ");
         printArray(arr);
 
         System.out.println();
 
-        System.out.println("After Sorting: ");
+        System.out.println("After sorting: ");
         sorted = selectionSort(arr);
         printArray(sorted);
     }
 
     public static int[] selectionSort(int[] arr) {
-        int minPosition = 0;
+        int minPosition;
         int minValue;
 
         for (int i = 0; i < arr.length - 1; i++) {
@@ -30,7 +31,7 @@ public class SelectionSort {
                     minValue = arr[minPosition];
                 }
             }
-             swap (arr, minPosition, i);
+            swap(arr, minPosition, i);
         }
         return arr;
     }

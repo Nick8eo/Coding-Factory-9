@@ -12,7 +12,7 @@ public class FloatingExpressions {
 
         double result = 0.0;
 
-        result = intNum + floatNum + doubleNum; // όλα μετατρέπονται στον μεγαλύτερο τύπο - auto-widening
+        result = intNum + floatNum + doubleNum;     // όλα μετατρέπονται στον μεγαλύτερο τύπο - auto-widening
 
         System.out.println("Result is: " + result);
         System.out.printf("Result is: %.2f\n", result);

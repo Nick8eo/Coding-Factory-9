@@ -10,18 +10,18 @@ import java.util.Scanner;
 public class InputExceptionApp {
 
     public static void main(String[] args) {
-     Scanner in = new Scanner(System.in);
-     int num = 0;
+        Scanner scanner = new Scanner(System.in);
+        int num = 0;
 
-        System.out.println("Please enter one int:");
-        // num = in.nextInt();
+        System.out.println("Please enter one int: ");
+        // num = scanner.nextInt();
 
-        while (!in.hasNextInt()) {
-            System.out.println("Incorrect type of data");
-            in.nextLine();
+        while (!scanner.hasNextInt()) {
+            System.out.println("Μη αποδεκτοί χαρακτήρες");
+            scanner.nextLine();
         }
 
-        num = in.nextInt();
+        num = scanner.nextInt();
         System.out.println("Num: " + num);
     }
 }

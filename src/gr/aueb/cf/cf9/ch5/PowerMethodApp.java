@@ -3,40 +3,37 @@ package gr.aueb.cf.cf9.ch5;
 import java.util.Scanner;
 
 /**
- * it calculates the a^b result using a method
- * where a and b are given by the user
+ * Υπολογίζει τη δύναμη a^b με μέθοδο.
  */
 public class PowerMethodApp {
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int base = 0;
-        int power = 0;
+        Scanner scanner = new Scanner(System.in);
+        int a = 0;
+        int b = 0;
         int result = 0;
 
-        System.out.println("Please provide the base number");
-        base = in.nextInt();
+        System.out.println("Please enter two numbers: ");
+        a = scanner.nextInt();
+        b = scanner.nextInt();
 
-        System.out.println("Please provide the power number");
-        power = in.nextInt();
+        result = pow(a, b);
 
-        result = powerCalc(base,power);
-        System.out.printf("The result of %d ^ %d = %d", base, power, result);
+        System.out.println("a^b = " + result);
     }
 
     /**
-     * the method
-     * @param a
-     * @param b
-     * @return
+     * Calculate a^b.
+     * @param a     the base.
+     * @param b     the exponent.
+     * @return      the result.
      */
-    public static int powerCalc(int a, int b) {
-
+    public static int pow(int a, int b) {
         int result = 1;
 
-        for (int i = 1; i <= b; i++){
+        for (int i = 0; i < b; i++) {
             result *= a;
         }
-
         return result;
     }
 }

@@ -1,27 +1,23 @@
 package gr.aueb.cf.cf9.ch2;
-/**
- * Μετατροπή των κιλών που διαβάζουμε από τον χρήστη σε γραμμάρια
- */
 
 import java.util.Scanner;
 
+/**
+ * The user inserts the weight in kilograms, and the program calculates
+ * the weight in grams.
+ */
 public class KiloToGrams {
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int weightInKilograms = 0;
+        int weightInGrams = 0;
+        final int KILOGRAMS_TO_GRAMS = 1000;
 
-        // Δήλωση μεταβλητών
-        Scanner in = new Scanner(System.in);
-        final int KILOS_TO_GRAMS = 1000;
-        int kilos = 0;
-        int grams = 0;
-
-        //Εντολές
         System.out.println("Παρακαλώ εισάγετε το βάρος σε κιλά");
-        kilos = in.nextInt();
-        grams = kilos * KILOS_TO_GRAMS;
+        weightInKilograms = scanner.nextInt();
+        weightInGrams = weightInKilograms * KILOGRAMS_TO_GRAMS;
 
-        //Αποτελέσματα
-        System.out.printf("Τα %d κιλά είναι %,d γραμμάρια.", kilos, grams);
-
-
+        System.out.printf("Το βάρος σε γραμμάρια των %d κιλών είναι: %,d γραμμάρια", weightInKilograms, weightInGrams);
     }
 }

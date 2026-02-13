@@ -3,26 +3,33 @@ package gr.aueb.cf.cf9.ch3;
 import java.util.Scanner;
 
 /**
- * calculates the power of a number, base^power
- * base^power = base * base * base * base ... (power φορές)
+ * Calculates the power of a number, base^power.
+ * base^power = base * base * base * ... * base
+ * (power φορές)
  */
 public class PowerApp {
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+
+        // Δήλωση και αρχικοποίηση μεταβλητών
+        Scanner scanner = new Scanner(System.in);
         int base = 0;
         int power = 0;
         int result = 1;
         int i = 1;
 
-        System.out.println("Παρακαλώ δώστε την βάση:");
-        base = in.nextInt();
-        System.out.println("Παρακαλώ δώστε τη δύναμη:");
-        power = in.nextInt();
+        // Είσοδος Δεδομένων και αντιστοίχιση σε μεταβλητές
+        System.out.println("Παρακαλούμε εισάγετε το base και το power");
+        base = scanner.nextInt();
+        power = scanner.nextInt();
 
-        while ( i <= power ) {
-            result *= base;
-            i += 1;
+        // Επεξεργασία Δεδομένων - While - do
+        while (i <= power) {
+            result *= base;     // result = result * base
+            i++;
         }
-        System.out.printf("Το αποτέλεσμα είναι: %d",result);
+
+        // Εκτύπωση των αποτελεσμάτων
+        System.out.printf("%d ^ %d = %d\n", base, power, result);
     }
 }

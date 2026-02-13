@@ -4,25 +4,36 @@ import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * Μετατροπή των ωρών που θα δώσει ο χρήστης σε λεπτά
- * και δευτερόλεπτα
+ * Calc Hours to Minutes and Seconds for a given number of hours.
+ * The user inserts the number of hours, and the program calculates
+ * the number of minutes and the number of seconds. For instance, if
+ * the user inserts 1 hour, the program will calculate 60 minutes and
+ * 3600 seconds.
+ *
  */
 public class HoursToMinSec {
+
     public static void main(String[] args) {
+
+        // Δήλωση και αρχικοποίηση μεταβλητών
         Scanner scanner = new Scanner(System.in);
-        final int HOUR_TO_MIN = 60;
-        final int HOUR_TO_SEC = 3600;
+        final int HOURS_TO_MINUTES = 60;
+        final int HOURS_TO_SECONDS = 3600;
         int hours = 0;
-        int min = 0;
-        int sec = 0;
+        int minutes = 0;
+        int seconds = 0;
 
-        System.out.println("Παρακαλώ δώστε ώρες για μετατροπή");
+        // Εντολές
+        // Πάρε input από τον χρήστη -- data binding
+        System.out.println("Please insert the number of hours:");
         hours = scanner.nextInt();
-        min = hours * HOUR_TO_MIN;
-        sec = min * HOUR_TO_SEC;
 
-        System.out.printf("Οι %d ώρες είναι %,d λεπτά και %,d δευτερόλεπτα\n", hours, min, sec);
-        System.out.printf(Locale.forLanguageTag("el"), "Οι %d ώρες είναι %,d λεπτά και %,d δευτερόλεπτα", hours, min, sec); //Ελληνική μορφή (. αντί για ,)
+        // Επεξεργάσου το input -- expressions
+        minutes = hours * HOURS_TO_MINUTES;
+        seconds = hours * HOURS_TO_SECONDS;
 
+        // Δώσε στον χρήστη το αποτέλεσμα
+        System.out.printf(Locale.US, "The number of minutes is: %,d\n", minutes);
+        System.out.printf(Locale.forLanguageTag("el"), "The number of seconds is: %,d\n", seconds);
     }
 }

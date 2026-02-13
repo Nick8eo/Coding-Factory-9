@@ -1,14 +1,14 @@
 package gr.aueb.cf.cf9.ch3;
 
 /**
- * prints each iteration number
+ * Prints each iteration number
  */
 public class ForApp {
+
     public static void main(String[] args) {
 
-        for (int i = 1 ; i <= 10 ; i++) {
+        for (int i = 1; i <= 10; i++) {
             System.out.println(i);
-
         }
     }
 }

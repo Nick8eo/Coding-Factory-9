@@ -8,8 +8,8 @@ import java.io.*;
 public class BinaryFiles {
 
     public static void main(String[] args) {
-        String inputFile = "C:/Users/Hellraiser/aueb.jpg";
-        String outputFile = "C:/Users/Hellraiser/aueb-copy.jpg";
+        String inputFile = "C:/Users/a8ana/aueb.jpg";
+        String outputFile = "C:/Users/a8ana/aueb-copy.jpg";
 
         try {
             binaryFileReadWrite(inputFile, outputFile);

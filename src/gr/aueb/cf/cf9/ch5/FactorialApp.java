@@ -3,34 +3,43 @@ package gr.aueb.cf.cf9.ch5;
 import java.util.Scanner;
 
 /**
- *  Υπολογίζει το παραγοντικό του n,
- *  με χρήση μεθόδου.
+ * Υπολογίζει το παραγοντικό του n,
+ * με μέθοδο. To n! = 1 * 2 * 3 * 4 * ... * n
+ * Kαι 0! = 1
  */
 public class FactorialApp {
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = 0;
 
-        System.out.println("Please give the number for the factorial calculation:");
+        // Δήλωση και αρχικοποίηση μεταβλητών
+        Scanner scanner = new Scanner(System.in);
+        int num = 0;
+        int factorial = 0;
 
-        n = in.nextInt();
+        // Input data from the user and data binding
+        System.out.println("Please enter a number: ");
+        num = scanner.nextInt();
 
-        System.out.println(factorial(n));
+        // Call the service method - delegation
+        factorial = facto(num);     // Inject the num real parameter
 
+        // Εκτύπωση αποτελέσματος
+        System.out.println("The factorial of " + num + " is " + factorial);
     }
 
     /**
-     * Calculates factorial of n.
-     * @param n
-     * @return
+     * Calculates the factorial of n.
+     *
+     * @param n     the number to calculate factorial of.
+     * @return      the factorial of n.
      */
-    public static int factorial(int n) {
-
-        int result = 1;
+    public static int facto(int n) {
+        int factorial = 1;
 
         for (int i = 1; i <= n; i++) {
-            result *= i;
+            factorial *= i; // factorial = factorial * i;
         }
-        return result;
+
+        return factorial;
     }
 }

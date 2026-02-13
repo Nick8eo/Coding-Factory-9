@@ -1,6 +1,7 @@
 package gr.aueb.cf.cf9.ch6;
 
 public class BinarySearch {
+
     public static void main(String[] args) {
 
     }
@@ -10,12 +11,10 @@ public class BinarySearch {
         if (low < 0 || high > arr.length - 1) return -1;
         if (low > high) return -1;
 
-        int mid = (low+high) / 2;
+        int mid = (low + high) / 2;
 
         if (arr[mid] == value) return mid;
-
-        if (arr[mid] > value) return binarySearch(arr, value, low, mid -1);
-        else return binarySearch(arr, value, mid + 1, high);
-
+        if (value > arr[mid]) return binarySearch(arr, value, mid + 1, high);
+        else return binarySearch(arr, value, low, mid - 1); // else if (value < arr[mid])
     }
 }

@@ -3,26 +3,27 @@ package gr.aueb.cf.cf9.ch3;
 import java.util.Scanner;
 
 /**
- * counts the number of digits in a number
- * given by the user
- * e.g. 148 has 3 digits
+ * Υπολογίζει το πλήθος των ψηφίων ενός
+ * ακεραίου. Για παράδειγμα, αν ο ακέραιος είναι
+ * ο 178, το πλήθος των ψηφίων είναι 3.
  */
 public class DigitsApp {
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int digits = 0;
+        Scanner scanner = new Scanner(System.in);
         int num = 0;
+        int digits = 0;
         int inputNum = 0;
 
-        System.out.println("Please give a number:");
-        num = in.nextInt();
-        inputNum = num;
+        System.out.println("Please enter a number: ");
+        num = scanner.nextInt();
 
-        while (num > 0 ) {
+        inputNum = num;     // save the input number for later use
+        do {
             digits++;
-            num = num / 10;
+            num /= 10;  // num = num / 10;
+        } while (num != 0);
 
-        }
-        System.out.printf("The number of digits of %d is: %d", inputNum, digits);
+        System.out.println("The number of digits of " + inputNum + " is: " + digits);
     }
 }

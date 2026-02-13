@@ -3,38 +3,41 @@ package gr.aueb.cf.cf9.ch4;
 import java.util.Scanner;
 
 /**
- * user enters a grade 1-10 and app gives
- * a message accordingly
+ * Λαμβάνει ένα βαθμό από τον χρήστη και
+ * ανάλογα τη βαθμολογική κλίμακα εμφανίζει
+ * κατάλληλο μήνυμα.
  */
 public class GradeApp {
+
     public static void main(String[] args) {
-        Scanner in = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
         int grade = 0;
 
-        System.out.print("Please enter grade:");
-        grade = in.nextInt();
+        System.out.println("Please enter a grade: ");
+        grade = scanner.nextInt();
 
-        switch (grade){
-            case 0,1,2,3,4 :
-                System.out.println("You failed this subject");
+        switch (grade) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                System.out.println("Κάτω από τη βάση");
                 break;
-            case 5,6,7,8:
-                System.out.println("You passed!");
+            case 5:
+            case 6:
+                System.out.println("Καλώς");
                 break;
-            case 9,10:
-                System.out.println("You passed with honors");
+            case 7:
+            case 8:
+                System.out.println("Λίαν καλώς");
+                break;
+            case 9:
+            case 10:
+                System.out.println("Άριστα");
                 break;
             default:
-                System.out.println("You entered wrong grade");
+                System.out.println("Ο βαθμός πρέπει να είναι μεταξύ 1-10");
                 break;
-
-        }
-        // ΕΝΑΛΛΑΚΤΙΚΑ
-        switch (grade) {
-            case 0, 1, 2, 3, 4 -> System.out.println("You failed the subject");
-            case 5, 6, 7, 8 -> System.out.println("You passed");
-            case 9, 10 -> System.out.println("You passed with honors");
-            default -> System.out.println("You entered wrong grade");
         }
     }
 }

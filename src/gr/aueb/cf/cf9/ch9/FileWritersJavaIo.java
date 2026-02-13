@@ -9,11 +9,11 @@ import java.nio.charset.StandardCharsets;
 public class FileWritersJavaIo {
 
     public static void main(String[] args) {
-        File file = new File("C:/Users/Hellraiser/IdeaProjects/CodingFactory9/src/gr/aueb/cf/cf9/ch9/file.txt");
+        File file = new File("C:/Users/a8ana/IdeaProjects/CodingFactory9/src/gr/aueb/cf/cf9/ch9/file.txt");
 
 
-        try (PrintStream ps = new PrintStream("C:/Users/Hellraiser/IdeaProjects/CodingFactory9/src/gr/aueb/cf/cf9/ch9/file-ps.txt")) {
-//            fileWriter("C:/Users/Hellraiser/IdeaProjects/CodingFactory9/src/gr/aueb/cf/cf9/ch9/file.txt");
+        try (PrintStream ps = new PrintStream("C:/Users/a8ana/IdeaProjects/CodingFactory9/src/gr/aueb/cf/cf9/ch9/file-ps.txt")) {
+//            fileWriter("C:/Users/a8ana/IdeaProjects/CodingFactory9/src/gr/aueb/cf/cf9/ch9/file.txt");
 //            bufferedWriter(file);
 
             // Flexible usage of sayHello() method

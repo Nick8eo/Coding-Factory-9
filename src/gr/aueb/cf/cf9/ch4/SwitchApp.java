@@ -1,6 +1,5 @@
 package gr.aueb.cf.cf9.ch4;
 
-import javax.imageio.plugins.tiff.ExifInteroperabilityTagSet;
 import java.util.Scanner;
 
 /**
@@ -10,37 +9,40 @@ import java.util.Scanner;
  * στον χρήστη
  */
 public class SwitchApp {
+
     public static void main(String[] args) {
-        Scanner in = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
         int choice = 0;
         final int EXIT = 4;
 
         do {
-            System.out.println("Παρακαλώ επιλέξτε ένα από τα ακόλουθα");
-            System.out.println("1. One-Player Game");
-            System.out.println("2. Two-Player Game");
-            System.out.println("3. Team Game");
+            System.out.println("Παρακαλούμε επιλέξτε ένα από τα ακόλουθα");
+            System.out.println("1. One-player game");
+            System.out.println("2. Two-player game");
+            System.out.println("3. Team game");
             System.out.println("4. Exit");
 
-            choice = in.nextInt();
+            choice = scanner.nextInt();
 
-            switch(choice) {
+            switch (choice) {
                 case 1:
-                    System.out.println("Start One-Player Game");
+                    System.out.println("Start One-player game");
                     break;
                 case 2:
-                    System.out.println("Start Two-Player Game");
+                    System.out.println("Start Two-player game");
                     break;
                 case 3:
-                    System.out.println("Start Team-Game");
+                    System.out.println("Start Team game");
+                    break;
                 case 4:
-                    System.out.println("Exit Game");
+                    System.out.println("Exit game");
                     break;
                 default:
                     System.out.println("Error in choice");
                     break;
             }
+        } while (choice != EXIT);
 
-        }while (choice != EXIT);
+        System.out.println("Goodbye");
     }
 }

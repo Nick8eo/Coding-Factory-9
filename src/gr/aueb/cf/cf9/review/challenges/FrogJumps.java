@@ -2,26 +2,30 @@ package gr.aueb.cf.cf9.review.challenges;
 
 /**
  * Από ένα σημείο x, να πάει σε ένα σημείο y
- * όπου κάθε jump είναι j.
+ * όπου κάθε απόσταση jump, είναι jump.
+ *
+ * Έστω ότι
+ * χ = 10
+ * y = 55
+ * jump = 25
  */
 public class FrogJumps {
 
     public static void main(String[] args) {
-        int x = 10;
-        int y = 55;
-        int j = 25;
 
-        System.out.println(countJumps(x,y,j));
     }
 
-    public static int countJumps(int x, int y, int j) {
+    public static int frogJumps(int start, int end, int jump) {
+        int jumpCount = 0;
 
-        int count = 0;
-
-        for (int i = x; i < y; i = i+j) {
-            count ++;
+        while (start < end) {
+            start += jump;
+            jumpCount++;
         }
+        return jumpCount;
+    }
 
-        return count;
+    public static int frogJumps2(int start, int end, int jump) {
+        return (int) Math.ceil((end - start) / (double) jump);
     }
 }
